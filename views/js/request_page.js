@@ -7,7 +7,7 @@ var studentNameReg = /^[A-Za-z]+\s[A-Za-z]+$/;
 var classList = {};
 $(document).ready(function(){
     $('#confirm-a-number').hide();
-    $('#confirm-student-name').hide();
+    $('#confirm-span').hide();
     $('#sign-in').on('change', toggleLogin);
     $('#first-time').on('change', toggleLogin);
     $('#class-selector').on('change', setTeachers);
@@ -20,32 +20,27 @@ $(document).ready(function(){
             signUpFunction();
         }
     });
-
-
     $.get('/classes', function(data){
         classList = data;
         console.log(data);
         setUpForm(data);
     }).fail(function(){
         classList.failed = true;
-    })
-
-
+    });
 });
 
 var toggleLogin = function(){
     if(!login){
         $('#login-button').html("Log In");
         $('#confirm-a-number').hide(400);
-        $('#confirm-student-name').hide(400);
+        $('#confirm-span').hide(400);
     }
     else{
         $('#login-button').html("Sign Up");
         $('#confirm-a-number').show(400);
-        $('#confirm-student-name').show(400);
+        $('#confirm-span').show(400);
     }
     login = !login;
-    console.log(login);
 };
 
 var loginFunction = function(){
@@ -74,36 +69,12 @@ var signUpFunction = function(){
         alert("Make sure your name only has one space and your a number does not include the letter 'A' and no white space");
         return;
     }
-
     $.post('/',{userName: name, number: aNumber}, function(data){
         signedUp();
     }).fail(function(){
         signUpFailed();
     });
 };
-
-var signedUp = function(){
-    alert("You are now signed up for the tutor lab. Fill out the form to get some help!");
-    showForm();
-};
-
-var signUpFailed = function(){
-    alert("Something went wrond on our server, Please try again");
-};
-
-var loggedIn = function(){
-    alert("You are now logged in. Fill out the form to get some help!");
-    showForm();
-};
-
-var loginFailed = function(){
-    alert("Login Failed: Name or A# do not match system records");
-};
-
-var showForm = function(){
-    $('#login-form').hide();
-    $('#assistance-form').attr("style","display: flex");
-}
 
 var setUpForm = function(){
     var selector = $('#class-selector');

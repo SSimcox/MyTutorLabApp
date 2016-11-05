@@ -12,16 +12,16 @@
         <h2>Please fill out the form below to be assisted</h2>
         <h4>Even with the small problems</h4>
         <form id="login-form">
-            <input id="student-name" placeholder="Enter your name">
-            <input id="confirm-student-name" class="" placeholder="Confirm Your name">
+            <span class="name-span"><input id="first-name" placeholder="First Name"><input id="last-name" placeholder="Last Name"></span>
+            <span id="confirm-span" class="name-span"><input id="confirm-first-name" placeholder="Confirm First Name"><input id="confirm-last-name" placeholder="Confirm Last Name"></span>
             <input id="a-number" placeholder="A#">
-            <input id="confirm-a-number" class="" placeholder="Confirm A#">
+            <input id="confirm-a-number" placeholder="Confirm A#">
             <label>Is this your first time to the Tutor Lab?</label>
             <span><input id="first-time" type="radio" name="first-time" value="first-time">Yes</span>
             <span><input id="sign-in" type="radio" name="first-time" value="attended-previously" checked>No</span>
             <button id="login-button" type="button">Log In</button>
         </form>
 
-    <script type="text/javascript" src="js/request_page.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
     </body>
 </html>

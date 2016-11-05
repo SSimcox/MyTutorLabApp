@@ -26,10 +26,16 @@ select, input, textarea,label{
     margin-bottom:5px;
 }
 
+#last-name, #first-name, #confirm-last-name, #confirm-first-name{
+    flex:1 50%;
+}
 span{
     display: block;
     flex:1 100%;
+}
 
+.name-span{
+    display: flex;
 }
 
 #assistance-form, #login-form{

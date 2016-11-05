@@ -14,7 +14,7 @@ var parseUrlEncoder = bodyParser.urlencoded({extended: false});
 
 var students = {"steven simcox": {"aNumber":"01186010"},"t":{"aNumber":"0"}};
 var classes = [1400,1410,2410,2420,2610,3100,3800];
-var classData = {1400:["Dan Watson","Buggs Bunny"],1410:["B Holdaway", "K Sundberg"]}
+var classData = {1400:["Dan Watson","Buggs Bunny"],1410:["B Holdaway", "K Sundberg"]};
 
 app.get('/', function(req,res){
    res.send("Hello World");
@@ -26,12 +26,12 @@ app.get('/classes',function(req,res){
 
 app.post('/', parseUrlEncoder, function(req, res){
     var data = req.body;
-    if(students[data.userName]) res.send(students[data.userName]);
+    if(students[data.userName]) res.status(401).send(students[data.userName]);
     else {
         students[data.userName] = {aNumber: data.number};
         console.log("Received sign-up request for " + data.userName);
         if (!students[data.userName]) res.status(404).send();
-        res.send(data);
+        else{res.send(data)};
     }
 });
 
