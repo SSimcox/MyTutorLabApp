@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Submit A Request</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet"/>
+    <link href="css/submitRequest.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 </head>
 <body>
-    <form id="assistance-form" class="">
-        <label id="class-label" class="">What course?</label>
-        <select id="class-selector" class="">
-            <option value="empty"></option>
-        </select>
-        <label id="teacher-label" class="">Who is your teacher?</label>
-        <select id="teacher-selector" class="">
-            <option value="empty"></option>
-        </select>
-        <label id="reason-label" class="">What is the purpose of your visit?</label>
-        <select id="reason-selector" class="">
-            <option>Homework Question</option>
-            <option>General Programing Help</option>
-        </select>
-        <label id="issue-label" class="">What is the issue with your program?</label>
-        <textarea id="program-issue" class=""></textarea>
-    </form>
+    <h1>Welcome to the Computer Science Tutor Lab</h1>
+    <h2>Please fill out the form below to be assisted</h2>
+    <h4>Even with the small problems</h4>
+    <div id="body">
+        <div id="help-queue">
+            <ol id="help-queue-list">
+                <li>Placeholder Name</li>
+            </ol>
+        </div>
+        <div id="assistance-wrap">
+            <form id="assistance-form" class="">
+                <label id="class-label" class="">What course?</label>
+                <select id="class-selector" class="">
+                    <option value="empty"></option>
+                </select>
+                <label id="teacher-label" class="">Who is your teacher?</label>
+                <select id="teacher-selector" class="">
+                    <option value="empty"></option>
+                </select>
+                <label id="reason-label" class="">What is the purpose of your visit?</label>
+                <select id="reason-selector" class="">
+                    <option value="empty"></option>
+                    <option>Homework Question</option>
+                    <option>General Programing Help</option>
+                </select>
+                <label id="issue-label" class="">What is the issue with your program?</label>
+                <textarea id="program-issue" class=""></textarea>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/request_page.js"></script>
 </body>
 </html>

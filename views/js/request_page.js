@@ -6,20 +6,8 @@ var aNumberReg = /^\d{8}$/;
 var studentNameReg = /^[A-Za-z]+\s[A-Za-z]+$/;
 var classList = {};
 $(document).ready(function(){
-    $('#confirm-a-number').hide();
-    $('#confirm-span').hide();
-    $('#sign-in').on('change', toggleLogin);
-    $('#first-time').on('change', toggleLogin);
     $('#class-selector').on('change', setTeachers);
-    $('#login-button').on('click', function(e){
-        e.preventDefault();
-        if(login){
-            loginFunction();
-        }
-        else{
-            signUpFunction();
-        }
-    });
+
     $.get('/classes', function(data){
         classList = data;
         console.log(data);

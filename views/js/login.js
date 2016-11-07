@@ -72,6 +72,7 @@ var signUpFunction = function(){
 
 var signedUp = function(){
     alert("You are now signed up for the tutor lab. Fill out the form to get some help!");
+    redirect();
 };
 
 var signUpFailed = function(status){
@@ -89,8 +90,13 @@ var signUpFailed = function(status){
 
 var loggedIn = function(){
     alert("You are now logged in. Fill out the form to get some help!");
+    redirect();
 };
 
 var loginFailed = function(){
     alert("Login Failed: Name or A# do not match system records");
+};
+
+var redirect = function(){
+
 };

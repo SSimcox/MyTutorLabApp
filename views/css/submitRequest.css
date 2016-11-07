@@ -1,0 +1,35 @@
+#body{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 50%;
+    margin: 50px auto;
+}
+
+#assistance-form{
+    flex: 1 100%;
+    flex-flow: row wrap;
+    background-color: white;
+    color: black;
+    border: 2px solid #0f2439;
+    border-radius:5px;
+}
+
+#assistance-wrap{
+    flex: 1 70%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#help-queue{
+    flex: 1 20%;
+    background-color: white;
+    color: black;
+    border: 1px solid #0f2439;
+    border-radius: 5px;
+}
+
+li{
+    border-bottom: 2px solid black;
+    margin: 0 5px 0 -5px;
+    text-align: center;
+}
