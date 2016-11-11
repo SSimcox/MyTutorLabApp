@@ -1,12 +1,14 @@
 /**
  * Created by Steven on 11/3/2016.
  */
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
+var pgp = require('pg-promise')(/*options*/);
+var db = pgp('postgres://Steven:espthtbl22@host:5432/tutorLab');
+console.log(db);
 
 app.use('/',express.static('views'));
 
